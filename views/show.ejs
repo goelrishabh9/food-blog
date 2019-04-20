@@ -1,0 +1,66 @@
+<% include ./partials/header %>
+
+    <div class="intro-inner">
+        <div class="about-intro" style="background:url(../../images/bg.jpg) no-repeat center;background-size:cover;">
+            <div class="dtable hw100">
+                <div class="dtable-cell hw100">
+                    <div class="container text-center">
+                        <h1 class="intro-title animated fadeInDown"> <%= blog.title %> </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.about-intro -->
+
+    </div>
+    <!-- /.intro-inner -->
+
+    <div class="main-container inner-page">
+        <div class="container">
+            <div class="section-content">
+                <div class="row ">
+                    <div class="col-xl-12">
+                        <h1 class="text-center title-1"> By: <%= blog.author %> </h1>
+                        <hr class="center-block small text-hr">
+                    </div>
+                    <div class="col-sm-6">
+                      <center> <figure>
+                                                <img alt="blog-post image"
+                                                     src="<%= blog.image %>">
+                                            </figure> </center>
+                    </div>
+
+                    <div class="col-sm-6" style="margin-top:50px;margin-left:20px;margin-right:20px">
+                        <div class="text-content has-lead-para text-left">
+                        <p> <%= blog.description %> </p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6" style="margin-top:50px">
+                        <form action="/edit/<%= blog._id %>" method="POST">
+                        <div class="form-group" style="margin-left:600px">
+                          <input type="Submit" class="btn btn-lg btn-primary" value="Suggest an Edit"></input>
+                          </div>
+                          </form>
+                          <form action="/delete/<%= blog._id %>" method="POST">
+                        <div class="form-group" style="margin-left:630px;margin-top:10px">
+                          <input type="Submit" class="btn btn-lg btn-primary" value="Remove"></input>
+                          </div>
+                          </form>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.main-container -->
+    
+
+<script src="/js/landing_autocomplete.js"></script>
+
+
+
+<!-- include jquery autocomplete plugin  -->
+
+<script type="text/javascript" src="/vendors/js/jquery.autocomplete.js"></script>

@@ -1,0 +1,116 @@
+<% include ./partials/header %>
+
+<div>
+
+    <div class="intro-inner">
+        <div class="about-intro" style="background:url(../../images/foodphotography1.jpg) no-repeat center;background-size:cover">
+            <div class="dtable hw100">
+                <div class="dtable-cell hw100">
+                    <div class="container text-center animated fadeInDown">
+
+                        <h1 class="intro-title" style="margin-bottom:20px;margin-top:20px">Hello Foodies!!</h1>
+                        <div>
+                        <p style="color:#ffffee;background-color:rgba(0,0,0,0.5);font-size:16px;padding:10px">Hello and Welcome!One cannot think well, love well, sleep well, if one has not dined well...So we bring to you a food blog where you can read and post about the famous cafes and dine-in places.
+                        Besides you can also write about your favourite ones.Remember that there is no sincerer love than the love of food and one of the very nicest things about life is the way we must regularly stop whatever it is we are doing and devote our attention to eating.
+                        </p>
+                        </div>
+                <form action="/login" method="POST">
+                   <div class="row justify-content-md-center search-row animated fadeInUp">
+                            
+                            <div class="col-xl-4 col-sm-4 search-col">
+                                <button class="btn btn-primary btn-search btn-block"><strong>
+                                    Post Blog</strong></button>
+                            </div>
+                        </div>                     
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.about-intro -->
+
+    </div>
+    <!-- /.intro-inner -->
+
+    <div class="main-container inner-page" style="background:url(../../images/bg.jpg) no-repeat center;background-size:cover">
+        <div class="container">
+            <div class="section-content">
+                <div class="row ">
+                <div class="col-sm-2" style="width:200px">
+                </div>
+            <div class="col-sm-8" style="margin-left:300px;margin-right:300px">      
+        <% blog.forEach(function(blogs){ %> 
+            <% if((blogs.title!='')&&(blogs.author!='')){ %>
+                    
+                    <div class="blog-post-wrapper animated fadeInUp">
+
+                            <article class="blog-post-item">
+                                <div class="inner-box">   
+                                	<div class="blog-post-img">
+
+                                        <a href="/blogs/<%= blogs._id %>">
+                                            <figure>
+                                                <img class="img-responsive img-thumbnail" alt="blog-post image"
+                                                     src="<%= blogs.image %>">
+                                            </figure>
+                                        </a>
+                                    </div>                               
+                                    <!--blog content-->
+                 
+                                    <div class="blog-post-content-desc" style="padding-bottom:20px">
+                            <h2 style="margin-left:7px"><a href="/blogs/<%= blogs._id %>"><%= blogs.title %></a></h2>
+                            <% var intro=blogs.description %>
+                            <% var disp=intro.substring(0,300)+"...." %>
+
+                            <p style="margin-left:10px"><%=disp %></p>
+
+                        <% var date = new Date(blogs.creationDate) %>
+                        <% var hours = date.getHours() %>
+                        <% if(hours>12){ %>
+                        <%     var hourString = hours-12 %>
+                        <%     var temp = "pm" %>
+                        <% } else { %>
+                        <%     var hourString = hours %>
+                        <%     var temp = "am" %>
+                        <% } %>
+
+                        <% var dateString = hourString + ":" + date.getMinutes() +" " + temp + ", " + date.toDateString() %>
+                            <span class="info-row" style="margin-left:7px"> <span class="date"><i class=" icon-clock"> </i> <%= dateString %></span>  -
+                                <span class="author"> <i class="fa fa-user"></i>  <a rel="author"
+                                                                                     title="Posts by <%=blogs.author%>" href="#" style="color:#9a9a9a"> <%= blogs.author %> </a> </span> 
+                                </span>
+                                    
+
+                                        </div>
+
+
+                                </div>
+                    </div>
+                    
+                <% }; %>
+                <% }); %>
+                </div>
+                    <!--blogLeft-->
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-2" style="width:200px">
+                </div>
+
+    </div>
+    <!-- /.main-container -->
+    
+</div>
+
+<script src="/js/landing_autocomplete.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/vendors.min.js"></script>
+<script src="/js/landing_autocomplete.js"></script>
+<!-- include jquery autocomplete plugin  -->
+
+
+<script type="text/javascript" src="/vendors/js/jquery.autocomplete.js"></script>
+

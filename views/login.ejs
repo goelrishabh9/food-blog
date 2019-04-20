@@ -1,0 +1,56 @@
+<% include ./partials/header %>
+
+    <div class="main-container" style="background:url(../../images/bg.jpg) no-repeat center;background-size:cover;height:100%">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 page-content" style="margin-left:300px;margin-right:300px;margin-top:100px">
+                    <div class="inner-box category-content">
+                        <h2 class="title-2"><i class="fa fa-credit-card" aria-hidden="true" style="margin-right:5px"></i>LOGIN</h2>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <form class="form-horizontal" role="form" action="/blog" method="POST">
+                                    <fieldset>
+
+                                       
+                                            
+                                            <div class="form-group row">
+                                            <label for="email" class="col-md-4 col-form-label" >Loginid: </label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="email" class="form-control input-md enter-otp" placeholder="" id="email" value="" maxlength="20" >
+                                            </div>
+                                            </div>
+                                             <div class="form-group row">
+                                            <label for="password" class="col-md-4 col-form-label" >Password: </label>
+                                            <div class="col-md-6">
+                                                <input type="password" name="password" class="form-control input-md enter-otp" id="password" value="" maxlength="16" >
+                                            </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+
+                                        <div class="form-group row">
+                                            <div class="col-md-6" style="margin-left:300px;margin-top:20px;margin-bottom:20px">
+                                                <button type="submit" class="btn btn-primary control-label">Continue</button>
+                                            </div>
+
+                                            </div>
+
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.page-content -->
+
+                
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.main-container -->
+
+
+<script src="/js/auth/reg_step2.js"></script>
